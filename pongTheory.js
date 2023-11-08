@@ -25,7 +25,7 @@ var swizzles = [(v) => new Vector3(v.x, v.y, v.z),
                 (v) => new Vector3(v.x, v.y, v.z)];
 
 var dts = [0.05, 0.002, 0.00014];
-var dot = new Vector3(0,0,0)
+var dot = new Vector3(3,2,1)
 var init = () => {
     currency = theory.createCurrency();
     speed = new Vector3(3, 2, 1);
@@ -127,12 +127,12 @@ var tick = (elapsedTime, multiplier) => {
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } if (Math.abs(state.y) > 10){
-        speed.y = -speed.y+9;
+        speed.y = -speed.y + 9;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } 
     if (Math.abs(state.z) > 5){
-        speed.z = -speed.z+9;
+        speed.z = -speed.z + 9;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } 
