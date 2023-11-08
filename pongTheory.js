@@ -28,7 +28,7 @@ var dts = [0.05, 0.002, 0.00014];
 var dot = new Vector3(0,0,0)
 var init = () => {
     currency = theory.createCurrency();
-    speed = new Vector3(0, 1, 0);
+    speed = new Vector3(3.1415926535, 2.718281828459045, 1.618033988749894);
     /////////////////////
     // Regular Upgrades
     sign = (x) => {
