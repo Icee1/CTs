@@ -18,7 +18,7 @@ var sign;
 
 var bounds = [[new Vector3(0, 0, 24.5), new Vector3(-20, -27, 1), new Vector3(20, 27, 30)]];
 
-var defaultStates = [new Vector3(0, 0, 0)];
+var defaultStates = [new Vector3(3, 2, 1)];
 
 var swizzles = [(v) => new Vector3(v.x, v.y, v.z),
                 (v) => new Vector3(v.y, v.z, v.x),
@@ -28,7 +28,7 @@ var dts = [0.05, 0.002, 0.00014];
 var dot = new Vector3(0,0,0)
 var init = () => {
     currency = theory.createCurrency();
-    speed = new Vector3(3.1415926535, 2.718281828459045, 1.618033988749894);
+    speed = new Vector3(3, 2, 1);
     /////////////////////
     // Regular Upgrades
     sign = (x) => {
