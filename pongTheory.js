@@ -123,16 +123,16 @@ var tick = (elapsedTime, multiplier) => {
 
     let bounces = 0;
     if (Math.abs(state.x) > 40){
-        speed.x = -speed.x;
+        speed.x = -speed.x + 9;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } if (Math.abs(state.y) > 10){
-        speed.y = -speed.y;
+        speed.y = -speed.y+9;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } 
     if (Math.abs(state.z) > 5){
-        speed.z = -speed.z;
+        speed.z = -speed.z+9;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } 
