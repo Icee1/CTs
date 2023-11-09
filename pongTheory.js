@@ -32,9 +32,9 @@ var init = () => {
     /////////////////////
     // Regular Upgrades
     sign = (x) => {
+      if (x < 0.0) return -1;
         if (x == 0.0) return 0;
         if (x > 0.0) return 1;
-        return -1;
     }
     updateSpeed = () => {
         //sign = new Vector3(speed.x > 0 ? 1 : (speed.x == 0 ? 0 : -1), speed.y > 0 ? 1 : (speed.y == 0 ? 0 : -1), speed.z > 0 ? 1 : (speed.z == 0 ? : -1));
@@ -44,7 +44,7 @@ var init = () => {
     {
         let getDesc = (level) => "x_{speed}={" + (level*2) + "}";
         let getInfo = (level) => "x_{speed}=" + (level*2);
-        xspeed = theory.createUpgrade(1, currency, new ExponentialCost(1, 5));
+        xspeed = theory.createUpgrade(1, currency, new ExponentialCost(1, -0.1));
         xspeed.getDescription = (_) => Utils.getMath(getDesc(xspeed.level));
         xspeed.getInfo = (amount) => Utils.getMathTo(getInfo(xspeed.level), getInfo(xspeed.level + amount));
         xspeed.boughtOrRefunded = (_) => {updateSpeed();theory.invalidatePrimaryEquation();}
