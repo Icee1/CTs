@@ -7,7 +7,7 @@ import { game, Game } from "./api/Game";
 
 var id = "pong"
 var name = "Pong Theory";
-var description = "Pong in Exponential Idle. Yes, you read that right.";
+var description = "Pong in  Idle. Yes, you read that right.";
 var authors = "71~073~#7380";
 var version = 1;
 
@@ -44,7 +44,7 @@ var init = () => {
     {
         let getDesc = (level) => "x_{speed}={" + (level*2) + "}";
         let getInfo = (level) => "x_{speed}=" + (level*2);
-        xspeed = theory.createUpgrade(1, currency, new ExponentialCost(1, -0.1));
+        xspeed = theory.createUpgrade(1, currency, new ExponentialCost(1, 0.1));
         xspeed.getDescription = (_) => Utils.getMath(getDesc(xspeed.level));
         xspeed.getInfo = (amount) => Utils.getMathTo(getInfo(xspeed.level), getInfo(xspeed.level + amount));
         xspeed.boughtOrRefunded = (_) => {updateSpeed();theory.invalidatePrimaryEquation();}
