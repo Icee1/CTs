@@ -33,7 +33,7 @@ var init = () => {
     // Regular Upgrades
     sign = (x) => {
       if (x < 0.0) return -1;
-        if (x == 0.0) return 0;
+        if (x == 0.0) return 1000;
         if (x > 0.0) return 1;
     }
     updateSpeed = () => {
