@@ -32,9 +32,9 @@ var init = () => {
     /////////////////////
     // Regular Upgrades
     sign = (x) => {
-      if (x < 0.0) return -1;
+      if (x < 0.0) return -20;
         if (x == 0.0) return 1000;
-        if (x > 0.0) return 1;
+        if (x > 0.0) return 20;
     }
     updateSpeed = () => {
         //sign = new Vector3(speed.x > 0 ? 1 : (speed.x == 0 ? 0 : -1), speed.y > 0 ? 1 : (speed.y == 0 ? 0 : -1), speed.z > 0 ? 1 : (speed.z == 0 ? : -1));
@@ -44,7 +44,7 @@ var init = () => {
     {
         let getDesc = (level) => "x_{speed}={" + (level*2) + "}";
         let getInfo = (level) => "x_{speed}=" + (level*2);
-        xspeed = theory.createUpgrade(1, currency, new ExponentialCost(1, 0.01));
+        xspeed = theory.createUpgrade(1, currency, new ExponentialCost(1, 0.1));
         xspeed.getDescription = (_) => Utils.getMath(getDesc(xspeed.level));
         xspeed.getInfo = (amount) => Utils.getMathTo(getInfo(xspeed.level), getInfo(xspeed.level + amount));
         xspeed.boughtOrRefunded = (_) => {updateSpeed();theory.invalidatePrimaryEquation();}
@@ -53,7 +53,7 @@ var init = () => {
     {
         let getDesc = (level) => "y_{speed}={" + (level*1.5) + "}";
         let getInfo = (level) => "y_{speed}=" + (level*1.5);
-        yspeed = theory.createUpgrade(2, currency, new ExponentialCost(1, 0.0006));
+        yspeed = theory.createUpgrade(2, currency, new ExponentialCost(1, 0.6));
         yspeed.getDescription = (_) => Utils.getMath(getDesc(yspeed.level));
         yspeed.getInfo = (amount) => Utils.getMathTo(getInfo(yspeed.level), getInfo(yspeed.level + amount));
         yspeed.boughtOrRefunded = (_) => {updateSpeed();theory.invalidatePrimaryEquation();}
@@ -62,7 +62,7 @@ var init = () => {
     {
         let getDesc = (level) => "z_{speed}={" + (level*1.5) + "}";
         let getInfo = (level) => "z_{speed}=" + (level*1.5);
-        zspeed = theory.createUpgrade(3, currency, new ExponentialCost(1, 7));
+        zspeed = theory.createUpgrade(3, currency, new ExponentialCost(1, 0.7));
         zspeed.getDescription = (_) => Utils.getMath(getDesc(zspeed.level));
         zspeed.getInfo = (amount) => Utils.getMathTo(getInfo(zspeed.level), getInfo(zspeed.level + amount));
         zspeed.boughtOrRefunded = (_) => {updateSpeed();theory.invalidatePrimaryEquation();}
