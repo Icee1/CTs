@@ -123,16 +123,16 @@ var tick = (elapsedTime, multiplier) => {
 
     let bounces = 0;
     if (Math.abs(state.x) > 40){
-        speed.x = -(speed.x) * 2 ;
+        speed.x = -speed.x;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } if (Math.abs(state.y) > 10){
-        speed.y = (-speed.y * 2);
+        speed.y = -speed.y;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } 
     if (Math.abs(state.z) > 5){
-        speed.z = ((-speed.z) * 9);
+        speed.z = -speed.z;
         bounces += 1;
         theory.invalidatePrimaryEquation();
     } 
@@ -165,7 +165,7 @@ var setInternalState = (stateString) => {
 
 var postPublish = () => {
     state = defaultStates[equation.level];
-    speed = new Vector3(0, 1, 0);
+    speed = new Vector3(Math.floor(Math.random() * 9), Math.floor(Math.random() * 9), Math.floor(Math.random() * 9));
 }
 
 var recreateDynamicSystem = () => {
